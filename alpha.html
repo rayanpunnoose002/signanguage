@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head>
+    <title>English to Sign Language (ASL) Translator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="description"
+        content="This English to Sign Language (ASL) translator converts English text into American Sign Language (ASL) used by people with speech and hearing impairment." />
+    <link rel="publisher" href="https://lalitkumar.in">
+    <link rel="shortcut icon" href="https://wecapable.com/static/images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="https://wecapable.com/static/images/favicon.png" type="image/x-icon" />
+    <meta property="og:title" content="English to Sign Language (ASL) Translator">
+    <meta property="og:description"
+        content="This English to Sign Language (ASL) translator converts English text into American Sign Language (ASL) used by people with speech and hearing impairment.">
+    <meta property="og:site_name" content="WeCapable">
+    <meta property="article:publisher" content="https://www.facebook.com/WeCapable">
+    <meta name="twitter:domain" content="WeCapable">
+    <meta name="twitter:creator" content="@WeCapable">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script data-ad-client="ca-pub-6554037306726692" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <link rel='stylesheet' href='./hh.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='./wk4gy5nqr.css' type='text/css' media='all' />
+    <script src="./common.js"></script>
+    <style>
+        #pageTitle {
+            text-align: center;
+            margin: 20px 0 20px 0;
+        }
+
+        #adTool {
+            display: block;
+            overflow: auto;
+        }
+
+        #adWrapper {
+            background: #ddd;
+            float: left;
+            width: 340px;
+            height: 290px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #adWrapperBanner {
+            background: #ddd;
+            height: 100px;
+            margin: 0 0 5px 0;
+        }
+
+        #toolWrapper {
+            float: right;
+            width: calc(100% - 380px);
+            min-height: 270px !important;
+            margin: 5px;
+            padding: 5px;
+            background: #fff;
+        }
+
+        #sourceText {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #EngText {
+            width: 100%;
+            padding: 10px;
+        }
+
+        #TextToConvert-LabelDiv {
+            font-size: 20px;
+            text-align: left;
+        }
+
+        #srcText {
+            width: 100%;
+            padding: 10px;
+        }
+
+        #srcLanguageDiv {
+            margin: 20px;
+        }
+
+        #srcLanguage {
+            font-size: 20px;
+            padding: 5px;
+        }
+
+        .convertBtnDiv {
+            margin: 10px;
+        }
+
+        @media only screen and (max-width: 1024px) {
+
+            #adWrapper,
+            #toolWrapper {
+                float: none;
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        @media only screen and (max-width: 840px) {
+
+            #adWrapper,
+            #toolWrapper {
+                margin: 20px 0 0 0;
+            }
+
+            #adTool {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        @font-face {
+            font-family: wecapableSIGN;
+            src: url("./2381267.ttf");
+        }
+
+        #signAlphabet {
+            background: transparent;
+            display: grid;
+            grid-gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            padding: 0;
+        }
+
+        .oneAlpha {
+            background: #ffffe0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            min-width: 100px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .alphaSign {
+            display: inline-block;
+            font-family: wecapableSIGN;
+            font-size: 170px;
+            line-height: 70%;
+            text-align: center;
+            padding: 2px;
+        }
+
+        .oneAlpha:hover {
+            background: #333;
+            color: #fff;
+            cursor: default;
+        }
+
+        .alphaEng {
+            display: block;
+            font-family: arial;
+            font-size: 70px;
+        }
+
+        #sLang {
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #signLanguageTools {
+            overflow: auto;
+            padding: 1px;
+            background: #efefef;
+        }
+
+        #oneTool {
+            display: inline-block !important;
+            margin: 5px;
+            background: #fbfbfb;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        #signLanguage {
+            border-radius: 5px;
+        }
+
+        .oneWord {
+            background: #ffffe0;
+            display: inline-block;
+            margin: 10px 20px 10px 5px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .oneWordEng {
+            background: #add8e6;
+            padding: 0 5px;
+            margin-bottom: 5px;
+        }
+
+        .mw56ekxz91 {
+            display: inline-block;
+            font-family: wecapableSIGN;
+            font-size: 110px;
+            line-height: 80px;
+            text-align: center;
+            padding: 2px;
+        }
+
+        .mw56ekxz91:hover {
+            background: #333;
+            color: #fff;
+            cursor: default;
+        }
+
+        .fixedWidthSign {
+            width: 100px !important;
+        }
+
+        .lowerCase {
+            border: 5px solid transparent !important;
+        }
+
+        .upperCase {
+            border: 5px solid #333 !important;
+        }
+
+        .obj39xs2 {
+            display: none;
+            font-family: arial;
+            font-size: 50px;
+            background: #efefef;
+            line-height: 120%;
+            color: #000;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+    <script>function showEngChars() { var checkBox = document.getElementById("showEngChars"); var all = document.getElementsByClassName('obj39xs2'); if (checkBox.checked == true) { for (var i = 0; i < all.length; i++) { all[i].style.display = 'block'; } } else { for (var i = 0; i < all.length; i++) { all[i].style.display = 'none'; } } } function fixedWidthSigns() { var checkBox = document.getElementById("fixedWidthSigns"); var d = document.getElementsByClassName("mw56ekxz91"); if (checkBox.checked == true) { for (var i = 0; i < d.length; i++) { d[i].className = d[i].className + " fixedWidthSign"; } } else { for (var i = 0; i < d.length; i++) { d[i].className = d[i].className.replace("fixedWidthSign", ""); } } }</script>
+    <script>$(document).ready(function () { $('#fntSize').on('change', function () { var s = $(this).val(); var l = (parseInt(s) - 40); $('.mw56ekxz91').css('font-size', s + 'px'); $('.mw56ekxz91').css('line-height', l + 'px'); }); fixedWidthSigns(); showEngChars(); });</script>
+</head>
+
+<body>
+   
+
+   
+               
+                    <div class="modal-dialog modal-xl"> <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <a href="./index.html"><span
+                                    aria-hidden="true">&times;</span></a>
+                                <h4 class="modal-title">American Sign Language (ASL) Alphabet</h4>
+                            </div>
+                            <div class="modal-body">
+                                <ul id='signAlphabet'>
+                                    <li class='oneAlpha'><span class='alphaSign'><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Sign_language_A.svg/780px-Sign_language_A.svg.png" style="height: 9rem; width: 9rem;" alt=""><span class='alphaEng'>A</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'><img src="" style="height: 9rem; width: 9rem;" alt=""> <span class='alphaEng'>B</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>C<span class='alphaEng'>C</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>D<span class='alphaEng'>D</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>E<span class='alphaEng'>E</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>F<span class='alphaEng'>F</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>G<span class='alphaEng'>G</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>H<span class='alphaEng'>H</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>I<span class='alphaEng'>I</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>J<span class='alphaEng'>J</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>K<span class='alphaEng'>K</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>L<span class='alphaEng'>L</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>M<span class='alphaEng'>M</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>N<span class='alphaEng'>N</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>O<span class='alphaEng'>O</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>P<span class='alphaEng'>P</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>Q<span class='alphaEng'>Q</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>R<span class='alphaEng'>R</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>S<span class='alphaEng'>S</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>T<span class='alphaEng'>T</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>U<span class='alphaEng'>U</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>V<span class='alphaEng'>V</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>W<span class='alphaEng'>W</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>X<span class='alphaEng'>X</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>Y<span class='alphaEng'>Y</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>Z<span class='alphaEng'>Z</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>0<span class='alphaEng'>0</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>1<span class='alphaEng'>1</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>2<span class='alphaEng'>2</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>3<span class='alphaEng'>3</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>4<span class='alphaEng'>4</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>5<span class='alphaEng'>5</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>6<span class='alphaEng'>6</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>7<span class='alphaEng'>7</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>8<span class='alphaEng'>8</span></span>
+                                    </li>
+                                    <li class='oneAlpha'><span class='alphaSign'>9<span class='alphaEng'>9</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+              
+            <!-- toolWrapper ends -->
+        </div> <!-- adTool ends -->
+        
+    </div> <!-- siteContainer ends -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81126214-2"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-81126214-2');</script>
+</body>
+
+</html>

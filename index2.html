@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Text to Sign Language Converter</title>
+	<script src="signplayer.js"></script>
+	<style>
+		canvas {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<h1>Text to Sign Language Converter</h1>
+	<p>Enter a word or phrase to see it in sign language:</p>
+	<input type="text" id="text-input">
+	<button onclick="convertToSignLanguage()">Convert to Sign Language</button>
+	<canvas id="sign-canvas" width="500" height="500"></canvas>
+	<script src="app.js"></script>
+</body>
+</html>

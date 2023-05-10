@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./gramm.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="./signplayer.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Sign Language Training</title>
+  
+</head>
+
+<body>
+  <div class="container">
+    <h2>Sign Language Training</h2> <br>
+    <h6 style="position: absolute;top: 28%;left: 26%;">"Unlock the power of Sign language: Learn to communicate with the world in a new way."</h6> <br> <br> <br>
+ <div class="row"><textarea style="width: 100%; height: 100px; " id="text-input" class="textarea" placeholder="Type Here.........."
+       spellcheck="true" autocomplete="on"></textarea> 
+       <button style="border-radius: 10px; margin-top: 20px; position: absolute;top: 55%;left: 40%;" id="button1" onclick="convertToSignLanguage()">ConvertToSignLanguage</button></div> <br> <br> <br><br><br><br>
+    
+   <canvas style="width: auto; height: auto;"  id="sign-canvas" class="textarea" placeholder="result" ></canvas>
+    
+    
+    
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./app.js"></script>
+
+
+</body>
+</html>
